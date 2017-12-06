@@ -12,13 +12,6 @@ This file was kept with minor changes to the original one
 ## Getting started
 
 ```sh
-# Clone the project
-git clone git@github.com:vmasto/express-babel.git
-cd express-babel
-
-# Make it your own
-rm -rf .git && git init && npm init
-
 # Install dependencies
 npm install
 
