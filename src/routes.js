@@ -1,8 +1,6 @@
 import express from 'express';
 import config from './config';
 
-const routes = express.Router();
-
 export default function(app) {
   
   // @TODO: 
@@ -10,7 +8,6 @@ export default function(app) {
   // app.use('/api/users', require('./api/user'));
   // app.use('/auth', require('./auth'));
 
-  // Routes
   app.use('/api/vendors', require('./api/vendor'));
   app.use('/uploads', express.static(config.UPLOADS));
 
@@ -24,8 +21,11 @@ export default function(app) {
 
   // @TODO:
   // Should serve React app on production if env is 'prod'
+  /*
   app.route('/*')
     .get((req, res) => {
       // res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
     });
+
+  */
 }

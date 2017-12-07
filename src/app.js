@@ -40,7 +40,7 @@ db.sequelize.sync()
     app.listen(config.PORT, () => console.log(`Listening on port ${config.PORT}`)); // eslint-disable-line no-console
   })
   .catch(function(err) {
-    console.log('Server failed to start due to error: %s', err);
+    console.log('Server failed to start due to error: %s', err); // eslint-disable-line no-console
   });
 
 // Expose app
