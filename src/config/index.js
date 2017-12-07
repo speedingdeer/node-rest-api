@@ -3,7 +3,7 @@ import path from 'path'
 // @TODO: Load TEST | DEV | PROD from environemnt folder
 
 module.exports = {
-  PORT: process.env.PORT || 8080,
+  PORT: process.env.PORT || 8888,
   DB: {
     uri: 'sqlite://',
     options: {

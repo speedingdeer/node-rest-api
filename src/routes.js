@@ -1,5 +1,6 @@
 import express from 'express';
 import config from './config';
+import path from 'path';
 
 export default function(app) {
   
@@ -19,13 +20,14 @@ export default function(app) {
       next(err);
    });
 
-  // @TODO:
-  // Should serve React app on production if env is 'prod'
-  /*
+
+  // Serve on production
+  app.route('/favicon.ico').get((req, res) => {
+    res.sendFile(path.resolve(path.join(__dirname, '../../client/build/favicon.ico')));
+  });
   app.route('/*')
     .get((req, res) => {
-      // res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
+      res.sendFile(path.resolve(path.join(__dirname, '../../client/build/index.html')));
     });
 
-  */
 }
