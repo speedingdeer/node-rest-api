@@ -4,6 +4,7 @@ export default function(sequelize, DataTypes) {
   // @TODO:
   // the unique constraint doesn't work as expected on sqlite
   // since it's very much WIP it's disabled for now
+  // it can be caught from the api too
   return sequelize.define('VendorsBestOffer', {
     vendor_id: {
       type: DataTypes.INTEGER,
