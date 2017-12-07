@@ -11,7 +11,8 @@ export default function(app) {
   // app.use('/auth', require('./auth'));
 
   // Routes
-  app.use('/', routes);
+  app.use('/api/vendors', require('./api/vendor'));
+  app.use('/uploads', express.static(config.UPLOADS));
 
   // All undefined asset or api routes should return a 404
   app.route('/:url(api|auth)/*')
@@ -21,10 +22,8 @@ export default function(app) {
       next(err);
    });
 
-  app.use('/uploads', express.static(config.UPLOADS));
-
   // @TODO:
-  // Should serve React app on production
+  // Should serve React app on production if env is 'prod'
   app.route('/*')
     .get((req, res) => {
       // res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
