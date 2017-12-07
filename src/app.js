@@ -6,6 +6,9 @@ import routes from './routes';
 import db from './db';
 import config from './config';
 
+// Populate databases with sample data
+if (config.SEED_DB) { require('./config/seed'); }
+
 const app = express();
 app.disable('x-powered-by');
 

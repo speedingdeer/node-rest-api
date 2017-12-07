@@ -1,6 +1,7 @@
-import { Router } from 'express';
+import express from 'express';
+import config from './config';
 
-const routes = Router();
+const routes = express.Router();
 
 export default function(app) {
   
@@ -19,6 +20,8 @@ export default function(app) {
       err.status = 404;
       next(err);
    });
+
+  app.use('/uploads', express.static(config.UPLOADS));
 
   // @TODO:
   // Should serve React app on production

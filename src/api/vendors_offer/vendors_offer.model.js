@@ -2,5 +2,6 @@
 export default function(sequelize, DataTypes) {
   return sequelize.define('VendorsOffer', {
     name: DataTypes.STRING,
+    // @TODO: Add slug
   });
 }
