@@ -3,6 +3,8 @@ import path from 'path';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import routes from './routes';
+import db from './db';
+import config from './config';
 
 const app = express();
 app.disable('x-powered-by');
@@ -29,5 +31,16 @@ app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
       message: err.message
     });
 });
+
+db.sequelize.sync()
+  .then(() => {
+    app.listen(config.PORT, () => console.log(`Listening on port ${config.PORT}`)); // eslint-disable-line no-console
+  })
+  .catch(function(err) {
+    console.log('Server failed to start due to error: %s', err);
+  });
+
+// Expose app
+exports = module.exports = app;
 
 export default app;
