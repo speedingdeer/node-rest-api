@@ -21,6 +21,7 @@ export default function(app) {
    });
 
 
+  // @TODO: add flag if production 'prod'
   // Serve on production
   app.route('/favicon.ico').get((req, res) => {
     res.sendFile(path.resolve(path.join(__dirname, '../../client/build/favicon.ico')));
