@@ -9,7 +9,7 @@ import db from '../db';
   var sandwiches = await db.Offer.create({ name: 'Sandwiches and nibbles' });
   var sharing = await db.Offer.create({ name: 'Sharing Lunch Platters' });
   var farm = await db.Offer.create({ name: 'Farm to Table' });
-  var lunch_Boxes = await db.Offer.create({ name: 'Hearty Lunch Boxes' });
+  var lunch_boxes = await db.Offer.create({ name: 'Hearty Lunch Boxes' });
   var vip = await db.Offer.create({ name: 'VIP Board Room' });
 
   // create vendors
@@ -52,6 +52,7 @@ import db from '../db';
   await db.VendorsOffer.sync()
   await db.VendorsOffer.destroy({ where: {} });
   await db.VendorsOffer.bulkCreate([{
+    // gails
     vendor_id: gails.id,
     vendors_offer_id: pastries.id
   }, {
@@ -60,7 +61,26 @@ import db from '../db';
   }, {
     vendor_id: gails.id,
     vendors_offer_id: sharing.id
+  }, {
+    // farmstand
+    vendor_id: farmstand.id,
+    vendors_offer_id: sharing.id
+  }, {
+    vendor_id: farmstand.id,
+    vendors_offer_id: farm.id
+  }, {
+    vendor_id: farmstand.id,
+    vendors_offer_id: lunch_boxes.id
+  }, {
+    // peardrop
+    vendor_id: peardrop.id,
+    vendors_offer_id: sharing.id
+  }, {
+    vendor_id: peardrop.id,
+    vendors_offer_id: peardrop.id
+  }, {
+    vendor_id: peardrop.id,
+    vendors_offer_id: vip.id
   }]);
-
 
 })();
