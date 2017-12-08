@@ -48,9 +48,7 @@ import db from '../db';
     teaser_picture: 'peardrop.jpg'
   });
 
-
-  try {
-  // create vendors best offers
+  // create vendor offers
   await db.VendorsOffer.sync()
   await db.VendorsOffer.destroy({ where: {} });
   await db.VendorsOffer.bulkCreate([{
@@ -64,8 +62,5 @@ import db from '../db';
     vendors_offer_id: sharing.id
   }]);
 
-} catch(e) {
-  console.log(e)
-}
 
 })();
