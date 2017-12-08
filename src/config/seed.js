@@ -3,8 +3,8 @@ import db from '../db';
 (async () => {
 
   // add keywards
-  await db.VendorsOffer.sync()
-  await db.VendorsOffer.destroy({ where: {} });
+  await db.Offer.sync()
+  await db.Offer.destroy({ where: {} });
   var pastries = await db.Offer.create({ name: 'Pastries' });
   var sandwiches = await db.Offer.create({ name: 'Sandwiches and nibbles' });
   var sharing = await db.Offer.create({ name: 'Sharing Lunch Platters' });
