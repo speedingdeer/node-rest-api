@@ -5,12 +5,12 @@ import db from '../db';
   // add keywards
   await db.VendorsOffer.sync()
   await db.VendorsOffer.destroy({ where: {} });
-  var pastries = await db.VendorsOffer.create({ name: 'Pastries' });
-  var sandwiches = await db.VendorsOffer.create({ name: 'Sandwiches and nibbles' });
-  var sharing = await db.VendorsOffer.create({ name: 'Sharing Lunch Platters' });
-  var farm = await db.VendorsOffer.create({ name: 'Farm to Table' });
-  var lunch_Boxes = await db.VendorsOffer.create({ name: 'Hearty Lunch Boxes' });
-  var vip = await db.VendorsOffer.create({ name: 'VIP Board Room' });
+  var pastries = await db.Offer.create({ name: 'Pastries' });
+  var sandwiches = await db.Offer.create({ name: 'Sandwiches and nibbles' });
+  var sharing = await db.Offer.create({ name: 'Sharing Lunch Platters' });
+  var farm = await db.Offer.create({ name: 'Farm to Table' });
+  var lunch_Boxes = await db.Offer.create({ name: 'Hearty Lunch Boxes' });
+  var vip = await db.Offer.create({ name: 'VIP Board Room' });
 
   // create vendors
   await db.Vendor.sync()
@@ -51,9 +51,9 @@ import db from '../db';
 
   try {
   // create vendors best offers
-  await db.VendorsBestOffer.sync()
-  await db.VendorsBestOffer.destroy({ where: {} });
-  await db.VendorsBestOffer.bulkCreate([{
+  await db.VendorsOffer.sync()
+  await db.VendorsOffer.destroy({ where: {} });
+  await db.VendorsOffer.bulkCreate([{
     vendor_id: gails.id,
     vendors_offer_id: pastries.id
   }, {
