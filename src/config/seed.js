@@ -48,6 +48,8 @@ import db from '../db';
     teaser_picture: 'peardrop.jpg'
   });
 
+
+  try {
   // create vendors best offers
   await db.VendorsBestOffer.sync()
   await db.VendorsBestOffer.destroy({ where: {} });
@@ -61,5 +63,9 @@ import db from '../db';
     vendor_id: gails.id,
     vendors_offer_id: sharing.id
   }]);
+
+} catch(e) {
+  console.log(e)
+}
 
 })();

@@ -13,11 +13,12 @@ db.VendorsBestOffer = db.sequelize.import('../api/vendors_best_offer/vendors_bes
 db.Vendor.belongsToMany(db.VendorsOffer, {
   through: db.VendorsBestOffer,
   foreignKey: 'vendor_id',
+
 });
 
 db.VendorsOffer.belongsToMany(db.Vendor, {
   through: db.VendorsBestOffer,
-  foreignKey: 'vendors_offer_id'
+  foreignKey: 'vendors_offer_id',
 });
 
 export default db;
