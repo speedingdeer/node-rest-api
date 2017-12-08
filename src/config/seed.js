@@ -53,34 +53,34 @@ import db from '../db';
   await db.VendorsOffer.destroy({ where: {} });
   await db.VendorsOffer.bulkCreate([{
     // gails
-    vendor_id: gails.id,
-    vendors_offer_id: pastries.id
+    VendorId: gails.id,
+    OfferId: pastries.id
   }, {
-    vendor_id: gails.id,
-    vendors_offer_id: sandwiches.id
+    VendorId: gails.id,
+    OfferId: sandwiches.id
   }, {
-    vendor_id: gails.id,
-    vendors_offer_id: sharing.id
+    VendorId: gails.id,
+    OfferId: sharing.id
   }, {
     // farmstand
-    vendor_id: farmstand.id,
-    vendors_offer_id: sharing.id
+    VendorId: farmstand.id,
+    OfferId: sharing.id
   }, {
-    vendor_id: farmstand.id,
-    vendors_offer_id: farm.id
+    VendorId: farmstand.id,
+    OfferId: farm.id
   }, {
-    vendor_id: farmstand.id,
-    vendors_offer_id: lunch_boxes.id
+    VendorId: farmstand.id,
+    OfferId: lunch_boxes.id
   }, {
     // peardrop
-    vendor_id: peardrop.id,
-    vendors_offer_id: sharing.id
+    VendorId: peardrop.id,
+    OfferId: pastries.id
   }, {
-    vendor_id: peardrop.id,
-    vendors_offer_id: peardrop.id
+    VendorId: peardrop.id,
+    OfferId: sharing.id
   }, {
-    vendor_id: peardrop.id,
-    vendors_offer_id: vip.id
+    VendorId: peardrop.id,
+    OfferId: vip.id
   }]);
 
 })();

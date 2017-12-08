@@ -17,7 +17,8 @@ function responseWithResult(res, statusCode) {
 }
 
 module.exports.index = function(req, res) {
-  db.Vendor.findAll()
+  //@TODO: the three selected could be randomized but it's probably fine if we take the three seeded now
+  db.Vendor.findAll({ include: [{ model: db.Offer, attributes: ['name'] }], limit: req.query.limit || -1 })
     .then(responseWithResult(res))
     .catch(handleError(res));
 }
