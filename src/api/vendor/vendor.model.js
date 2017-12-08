@@ -6,7 +6,7 @@ export default function(sequelize, DataTypes) {
     recommended: DataTypes.STRING,
     // @TODO: Add slug
     // no s3, no uri, just uploads and realative path to that for now
-    teaser_picture: DataTypes.STRING,
+    cover_picture: DataTypes.STRING,
     logo: DataTypes.STRING,
   });
 }

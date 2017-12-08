@@ -24,7 +24,8 @@ import db from '../db';
                     'parmesan chicken & chilli aioli, cauliflower & spinach, and smoked ' +
                     'salmon & avocado yoghurt. Treat yourself to Gail’s brownie bites for ' +
                     'dessert- you won’t be disappointed!',
-    teaser_picture: 'gails.jpg'
+    cover_picture: 'cover_pictures/gails.jpg',
+    logo:          'logos/gails.jpg'
   });
   var farmstand = await db.Vendor.create({
     name:           'Farmstand',
@@ -34,7 +35,8 @@ import db from '../db';
                     'sustainably sourced.',
     recommended:    'Harissa Chicken with Rainbow Slaw with Sesame Dressing and Broccoli ' +
                     'with Tahini and Sesame Seeds',
-    teaser_picture: 'farmstand.jpg'
+    cover_picture: 'cover_pictures/farmstand.jpg',
+    logo:          'logos/farmstand.jpg'
   });
   var peardrop = await db.Vendor.create({
     name:           'Peardrop',
@@ -45,7 +47,8 @@ import db from '../db';
                     'homemade pesto and house blushed tomato, pork & fennel meatballs ' +
                     'with tahini yoghurt and pomegranate, & seared sesame tuna wontons' +
                     'with wasabi cream.',
-    teaser_picture: 'peardrop.jpg'
+    cover_picture: 'cover_pictures/peardrop.jpg',
+    logo:          'logos/peardrop.jpg'
   });
 
   // create vendor offers
