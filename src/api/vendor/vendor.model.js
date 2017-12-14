@@ -1,7 +1,7 @@
 export default function(sequelize, DataTypes) {
   return sequelize.define('Vendor', {
     name: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
         // @TODO:
         // for now it's a minimal required information
         // in fact ALL of them should be required I think
