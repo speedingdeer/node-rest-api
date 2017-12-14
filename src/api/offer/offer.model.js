@@ -3,7 +3,9 @@ export default function(sequelize, DataTypes) {
   return sequelize.define('Offer', {
     name: {
       type: DataTypes.STRING,
-      unique: true
+      unique: {
+        msg: 'The specified already exists.'
+      }
     }
     // @TODO: Add slug
   });

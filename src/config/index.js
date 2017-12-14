@@ -14,6 +14,6 @@ module.exports = {
       }
     }
   },
-  SEED_DB: process.env != 'prod',
+  SEED_DB: process.env !== 'prod',
   UPLOADS: process.env.UPLOADS || path.join(__dirname, '../../uploads')
 }

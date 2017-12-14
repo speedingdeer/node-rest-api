@@ -2,6 +2,19 @@ import db from '../db';
 
 (async () => {
 
+  // create users
+  await db.User.sync();
+  await db.User.destroy({ where: {} });
+  var admin = await db.User.create({
+    email: 'admin@example.com',
+    password: 'admin',
+    role: 'admin'
+  });
+  var user = await db.User.create({
+    email: 'user@example.com',
+    password: 'user',
+  });
+
   // add keywards
   await db.Offer.sync()
   await db.Offer.destroy({ where: {} });

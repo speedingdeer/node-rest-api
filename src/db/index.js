@@ -6,6 +6,7 @@ var db = {
   sequelize: new Sequelize(config.DB.uri, config.DB.options)
 };
 
+db.User = db.sequelize.import('../api/user/user.model');
 db.Vendor = db.sequelize.import('../api/vendor/vendor.model');
 db.Offer = db.sequelize.import('../api/offer/offer.model');
 db.VendorsOffer = db.sequelize.import('../api/vendors_offer/vendors_offer.model');
