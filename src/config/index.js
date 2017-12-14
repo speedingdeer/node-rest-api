@@ -15,5 +15,6 @@ module.exports = {
     }
   },
   SEED_DB: process.env !== 'prod',
-  UPLOADS: process.env.UPLOADS || path.join(__dirname, '../../uploads')
+  UPLOADS: process.env.UPLOADS || path.join(__dirname, '../../uploads'),
+  SESSION_SECRET: process.env.SESSION_SECRET || 'secret'
 }

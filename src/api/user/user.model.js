@@ -58,7 +58,7 @@ export default function(sequelize, DataTypes) {
       // Public profile information
       profile: function() {
         return {
-          'email': this.name,
+          'email': this.email,
           'role': this.role
         };
       },
