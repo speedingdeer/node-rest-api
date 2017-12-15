@@ -4,10 +4,8 @@ import path from 'path';
 
 export default function(app) {
   
-  // @TODO: 
-  // fill in the endpoint below
-  // app.use('/api/users', require('./api/user'));
   app.use('/auth', require('./auth'));
+  app.use('/api/users', require('./api/user'));
   app.use('/api/vendors', require('./api/vendor'));
   app.use('/api/offers', require('./api/offer'));
   app.use('/uploads', express.static(config.UPLOADS));

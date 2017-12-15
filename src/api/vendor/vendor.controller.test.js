@@ -37,7 +37,7 @@ describe('GET /vendors', () => {
         expect(res.body).to.have.length(2);
       })
   });
-  it('should not allow to post if not authorised', async () => {
+  it('should not allow to post if not authorized', async () => {
     await request(app).post('/api/vendors')
        .send({ name: 'new vendor' })
       .expect(401)
