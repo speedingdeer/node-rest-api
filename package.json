@@ -16,7 +16,7 @@
     "clean": "rimraf dist",
     "build": "npm run clean && mkdir -p dist && babel src -s -D -d dist",
     "test": "rm test.sqlite; jest --watch",
-    "lint": "esw -w src test"
+    "lint": "esw -w src"
   },
   "keywords": [
     "express",
