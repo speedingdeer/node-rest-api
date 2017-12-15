@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from '../src/app.js';
+import app from './app.js';
 
 describe('GET /404', () => {
   it('should return 404 for non-existent API and auth paths', async () => {

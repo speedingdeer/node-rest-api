@@ -1,6 +1,6 @@
 import db from '../db';
 
-(async () => {
+export default async () => {
 
   // create users
   await db.User.sync();
@@ -99,4 +99,4 @@ import db from '../db';
     OfferId: vip.id
   }]);
 
-})();
+}
