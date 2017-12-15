@@ -14,7 +14,8 @@ module.exports.token = function(req, res) {
           token: jwt.sign({ id: user.id }, config.SESSION_SECRET, {
             // let it least forever
             // expiresIn: 60 * 60 * 5 
-          })
+          }),
+          user: { profile: user.profile, token: user.token }
         });
       } else {
         return res.status(401).json({ message: 'Wrong password.' });
