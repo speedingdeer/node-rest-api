@@ -5,7 +5,7 @@ let user;
 
 beforeEach(async () => {
   await db.sequelize.sync();
-  user = await db.User.create({email: 'user@example.com', password: 'user'});
+  user = await db.User.create({ email: 'user@example.com', password: 'user' });
 });
 
 

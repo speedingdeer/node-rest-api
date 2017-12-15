@@ -8,7 +8,7 @@ beforeAll(async () => {
 
 describe('Vendor.model', () => {
   it('should save correctly defined vendor', async () => {
-    var vendor = await db.Vendor.create({name: 'test vendor'})
+    var vendor = await db.Vendor.create({ name: 'test vendor' })
     expect(vendor.name).to.be.equal('test vendor')
   });
   it('should not allow to save vendor without its name', async () => {
@@ -26,7 +26,7 @@ describe('Vendor.model', () => {
   });
   it('should not allow to save vendor with blank name', async () => {
     try {
-      await await db.Vendor.create({name: ''})
+      await await db.Vendor.create({ name: '' })
     } catch (err) { return; }
     throw new Error('Should have thrown an error')
     

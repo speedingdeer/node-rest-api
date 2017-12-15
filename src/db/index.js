@@ -13,5 +13,8 @@ db.VendorsOffer = db.sequelize.import('../api/vendors_offer/vendors_offer.model'
 
 db.Vendor.belongsToMany(db.Offer, { through: db.VendorsOffer });
 db.Offer.belongsToMany(db.Vendor, { through: db.VendorsOffer });
+db.VendorsOffer.belongsTo(db.Offer)
+db.VendorsOffer.belongsTo(db.Vendor)
+
 
 export default db;

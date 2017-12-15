@@ -3,6 +3,8 @@ export default function(sequelize, DataTypes) {
   return sequelize.define('Offer', {
     name: {
       type: DataTypes.STRING,
+      allowNull: false,
+      validate: { notEmpty: true },
       unique: {
         msg: 'The specified already exists.'
       }
