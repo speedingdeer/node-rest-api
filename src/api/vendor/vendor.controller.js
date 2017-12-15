@@ -7,3 +7,12 @@ module.exports.index = function(req, res) {
     .then(util.responseWithResult(res))
     .catch(util.handleError(res));
 }
+
+module.exports.create = function(req, res) {
+
+  // @TODO appropriate statuses
+  // when body incomplete etc.
+  db.Vendor.create(req.body)
+    .then(util.responseWithResult(res))
+    .catch(util.handleError(res));
+}

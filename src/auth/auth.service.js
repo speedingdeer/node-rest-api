@@ -1,3 +1,9 @@
-// @TODO:
-// User is already injected
-// fill in with a basic authRequired / loginRequired route middelware to authorise particualr requests if needed
+
+export function isAuthorised(role = null) {
+  return function (req, res, next) {
+    if(!req.user) { return res.status(401).send('Unauthorised'); } // not logged in
+    if(!role) { return next(); } // any loggged in
+    if(req.user.role === role) { return next(); } // role matchs
+    res.status(403).send('Forbidden'); // Forbidden
+  }
+}
