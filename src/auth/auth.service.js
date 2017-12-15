@@ -1,5 +1,5 @@
 
-export function isAuthorised(role = null) {
+export function authRequired(role = null) {
   return function (req, res, next) {
     if(!req.user) { return res.status(401).send('Unauthorised'); } // not logged in
     if(!role) { return next(); } // any loggged in
