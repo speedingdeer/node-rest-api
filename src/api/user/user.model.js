@@ -34,6 +34,7 @@ export default function(sequelize, DataTypes) {
       unique: {
         msg: 'The specified email address is already in use.'
       },
+      allowNull: false,
       validate: {
         isEmail: true
       }
@@ -44,6 +45,7 @@ export default function(sequelize, DataTypes) {
     },
     password: {
       type: DataTypes.STRING,
+      allowNull: false,
       validate: {
         notEmpty: true
       }

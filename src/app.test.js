@@ -12,7 +12,7 @@ beforeAll(async () => {
   token = jwt.sign({ id: user.id }, config.SESSION_SECRET);
 });
 
-describe('AUTH', () => {
+describe('App AUTH / access', () => {
   it('should let in user without a token', async () => {
     await request(app).get('/').expect(200);
   });
