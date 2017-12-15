@@ -5,12 +5,12 @@ import db from '../db';
   // create users
   await db.User.sync();
   await db.User.destroy({ where: {} });
-  var admin = await db.User.create({
+  await db.User.create({
     email: 'admin@example.com',
     password: 'admin',
     role: 'admin'
   });
-  var user = await db.User.create({
+  await db.User.create({
     email: 'user@example.com',
     password: 'user',
   });

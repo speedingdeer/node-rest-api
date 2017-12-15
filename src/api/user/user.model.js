@@ -8,7 +8,7 @@ function genRandomString(length) {
   return crypto.randomBytes(Math.ceil(length/2))
     .toString('hex') /** convert to hexadecimal format */
     .slice(0,length);   /** return required number of characters */
-};
+}
 
 
 function sha512(password, salt) {
@@ -19,7 +19,7 @@ function sha512(password, salt) {
     salt: salt,
     password: value
   };
-};
+}
 
 function encryptPassword(password, salt = null) {
   if(!salt) { salt = genRandomString(16); } 
@@ -76,17 +76,16 @@ export default function(sequelize, DataTypes) {
 
     hooks: {
 
-      beforeBulkCreate: function(users, options) {
+      beforeBulkCreate: function(users) { // eslint-disable-line no-unused-vars
         // @TODO:
         // make sure all passwords are hashed
       },
-      beforeCreate: function(user, options) {
+      beforeCreate: function(user) {
         Object.assign(user, encryptPassword(user.password, user.salt));
       },
-      beforeUpdate: function(user, options) {
+      beforeUpdate: function(user) {
         if (user.changed('password')) {
-          user.salt = makeSalt();
-          user.password = encryptPassword(user.password, user.salt)
+           Object.assign(user, encryptPassword(user.password, user.salt));
         }
       }
 
@@ -100,4 +99,4 @@ export default function(sequelize, DataTypes) {
 
   return User;
 
-};
+}

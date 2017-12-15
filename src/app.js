@@ -47,7 +47,8 @@ routes(app);
 
 // Error handler
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
-  console.log(err)
+  // @TODO: Move to logger
+  console.log(err) // eslint-disable-line no-console
   res
     .status(err.status || 500)
     .render('error', {
@@ -60,6 +61,7 @@ db.sequelize.sync()
     app.listen(config.PORT, () => console.log(`Listening on port ${config.PORT}`)); // eslint-disable-line no-console
   })
   .catch(function(err) {
+    // @TODO: Move to logger
     console.log('Server failed to start due to error: %s', err); // eslint-disable-line no-console
   });
 
