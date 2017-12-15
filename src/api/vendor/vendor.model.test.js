@@ -33,6 +33,5 @@ describe('Vendor.model', () => {
 });
 
 afterAll(async () => {
-  await db.Vendor.sync()
   await db.Vendor.destroy({ where: {} });
 });

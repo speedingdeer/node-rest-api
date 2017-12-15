@@ -7,6 +7,6 @@ import seed from './config/seed';
 
 (async () => {
   await db.sequelize.sync();
-  if(config.SEED_DB) { await seed(); }
+  if(config.NODE_ENV !== 'prod') { await seed(); }
   app.listen(config.PORT, () => console.log(`Listening on port ${config.PORT}`));
 })();

@@ -14,7 +14,7 @@ module.exports = {
       }
     }
   },
-  SEED_DB: process.env !== 'prod',
+  NODE_ENV: process.env.NODE_ENV || 'dev',
   UPLOADS: process.env.UPLOADS || path.join(__dirname, '../../uploads'),
   SESSION_SECRET: process.env.SESSION_SECRET || 'secret'
 }
