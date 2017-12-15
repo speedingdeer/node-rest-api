@@ -36,6 +36,5 @@ describe('GET /vendors', () => {
 
 
 afterAll(async () => {
-  console.log('AFTER ALL')
   await db.Vendor.destroy({ where: {} });
 });

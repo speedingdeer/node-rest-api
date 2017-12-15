@@ -1,8 +1,8 @@
 import path from 'path'
 
-// @TODO: Load TEST | DEV | PROD from environemnt folder
+var NODE_ENV = process.env.NODE_ENV || 'dev';
 
-module.exports = {
+var DEFAULT_CONFIG =  {
   PORT: process.env.PORT || 8888,
   DB: {
     uri: 'sqlite://',
@@ -14,7 +14,11 @@ module.exports = {
       }
     }
   },
-  NODE_ENV: process.env.NODE_ENV || 'dev',
+  NODE_ENV: NODE_ENV,
   UPLOADS: process.env.UPLOADS || path.join(__dirname, '../../uploads'),
   SESSION_SECRET: process.env.SESSION_SECRET || 'secret'
 }
+
+Object.assign(DEFAULT_CONFIG, require(`./enviroments/${NODE_ENV}env`).default);
+
+export default DEFAULT_CONFIG

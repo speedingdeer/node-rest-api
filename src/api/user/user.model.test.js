@@ -1,5 +1,5 @@
 import db from './../../db';
-import chai, { expect } from 'chai';
+import { expect } from 'chai';
 
 let user;
 
