@@ -47,7 +47,7 @@ describe('User.model', () => {
     } catch (err) { return; }
     throw new Error('Should have thrown an error')
   });
-  it('should not allow to create user with incorrect email', async () => {
+  it('should not allow to create user with blank password', async () => {
     try {
       await await db.User.create( {email: 'user2@example.com', password: '' })
     } catch (err) { return; }

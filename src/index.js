@@ -3,10 +3,8 @@ import db from './db';
 import config from './config';
 import seed from './config/seed';
 
-// @TODO: Load the propert configuartion: DEV | TEST | PROD
-
 (async () => {
   await db.sequelize.sync();
   if(config.NODE_ENV !== 'prod') { await seed(); }
-  app.listen(config.PORT, () => console.log(`Listening on port ${config.PORT}`));
+  app.listen(config.PORT, () => console.log(`Listening on port ${config.PORT}`)); // eslint-disable-line no-console
 })();
