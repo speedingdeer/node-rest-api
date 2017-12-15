@@ -13,18 +13,23 @@ beforeAll(async () => {
 });
 
 describe('AUTH', () => {
-  it('should let in without a token', async () => {
+  it('should let in user without a token', async () => {
     await request(app).get('/').expect(200);
   });
-  it('should let you in with valid token', async () => {
+  it('should let in user with a valid token', async () => {
     await request(app).get('/')
       .set('Authorization', `Bearer ${token}`)
       .expect(200);
   });
-  it('should give 401 if token is invalid', async () => {
+  it('should throw 401 if token is invalid', async () => {
     await request(app).get('/')
       .set('Authorization', 'Bearer BROKEN TOKEN')
       .expect(401);
   });
 
+});
+
+
+afterAll(async () => {
+  await user.destroy({})
 });
