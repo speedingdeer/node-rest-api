@@ -5,6 +5,7 @@ export default function(sequelize, DataTypes) {
         // @TODO:
         // for now it's a minimal required information
         // in fact ALL of them should be required I think
+        allowNull: false,
         validate: { notEmpty: true }
     },
     description: DataTypes.STRING,
