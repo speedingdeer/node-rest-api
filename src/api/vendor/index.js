@@ -11,5 +11,4 @@ router.put('/:id', authRequired('admin'), controller.update);;
 router.delete('/:id', authRequired('admin'), controller.destroy);
 
 
-
 module.exports = router;
