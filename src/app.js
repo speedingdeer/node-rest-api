@@ -45,6 +45,7 @@ routes(app);
 // Error handler
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   // @TODO: Move to logger
+  console.log(err);
   res
     .status(err.status || 500)
     .render('error', {

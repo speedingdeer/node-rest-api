@@ -13,7 +13,13 @@ export default function(sequelize, DataTypes) {
     recommended: DataTypes.STRING,
     // @TODO: Add slug
     // no s3, no uri, just uploads and realative path to that for now
-    cover_picture: DataTypes.STRING,
-    logo: DataTypes.STRING,
+    cover_picture: {
+        type: DataTypes.STRING,
+        defaultValue: 'cover_pictures/feedr.jpg'
+    },
+    logo: {
+        type: DataTypes.STRING,
+        defaultValue: 'logos/feedr.jpg'
+    }
   });
 }
