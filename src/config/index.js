@@ -1,8 +1,8 @@
 import path from 'path'
 
-var NODE_ENV = process.env.NODE_ENV || 'dev';
+const NODE_ENV = process.env.NODE_ENV || 'dev';
 
-var DEFAULT_CONFIG =  {
+const DEFAULT_CONFIG =  {
   PORT: process.env.PORT || 8888,
   DB: {
     uri: 'sqlite://',

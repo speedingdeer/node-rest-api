@@ -1,7 +1,7 @@
 {
-  "name": "feedr-express-server",
+  "name": "node-rest-api",
   "version": "1.0.0",
-  "description": "Feedr coding challenge",
+  "description": "REST API exeample",
   "author": "@speedingdeer",
   "license": "MIT",
   "main": "dist/index.js",
